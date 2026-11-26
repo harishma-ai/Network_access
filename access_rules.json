@@ -1,0 +1,50 @@
+{
+  "default_action": "DENY",
+  "rules": [
+    {
+      "id": "ACL-01",
+      "source_ip": "192.168.1.10/32",
+      "destination_ip": "192.168.1.100/32",
+      "protocol": "TCP",
+      "destination_port": 22,
+      "action": "ALLOW",
+      "description": "Admin workstation is allowed SSH access to the server"
+    },
+    {
+      "id": "ACL-02",
+      "source_ip": "192.168.1.10/32",
+      "destination_ip": "192.168.1.100/32",
+      "protocol": "*",
+      "destination_port": "*",
+      "action": "ALLOW",
+      "description": "Admin workstation is allowed other server services in this demo"
+    },
+    {
+      "id": "ACL-03",
+      "source_ip": "192.168.1.20/32",
+      "destination_ip": "192.168.1.100/32",
+      "protocol": "TCP",
+      "destination_port": 80,
+      "action": "ALLOW",
+      "description": "Employee workstation is allowed HTTP access"
+    },
+    {
+      "id": "ACL-04",
+      "source_ip": "192.168.1.20/32",
+      "destination_ip": "192.168.1.100/32",
+      "protocol": "TCP",
+      "destination_port": 22,
+      "action": "DENY",
+      "description": "Employee SSH access is restricted"
+    },
+    {
+      "id": "ACL-05",
+      "source_ip": "192.168.1.30/32",
+      "destination_ip": "192.168.1.100/32",
+      "protocol": "*",
+      "destination_port": "*",
+      "action": "DENY",
+      "description": "Guest workstation cannot access the internal server"
+    }
+  ]
+}
